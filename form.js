@@ -17,21 +17,21 @@ class Pets {
 const renderList = function () {
   const contactsList = document.querySelector("ul");
 
-  contactsList.innerHTML = "";
+  pets.innerHTML = "";
 
-  pets.forEach((pets) => {
+  pets.forEach((pet) => {
     const newLi = document.createElement("li");
 
     newLi.innerText = `${pets.nomeAnimele} ${pets.nomeProprietario} - ${pets.specie} ${pets.razza}`;
 
-    contactsList.appendChild(newLi);
+    petsList.appendChild(newLi);
   });
 };
 
 const formReference = document.querySelector("form");
 formReference.addEventListener("submit", function (e) {
   e.preventDefault();
-  const newContact = new pets(
+  const newpets = new pets(
     nomeAnimaleInput.value,
     nomePropietarioInput.value,
     specieInput.value,
@@ -40,7 +40,7 @@ formReference.addEventListener("submit", function (e) {
 
   console.log("Animale Archiviato", newContact);
 
-  contacts.push(newContact);
+  pets.push(newpets);
 
   nomeAnimaleInput.value = "";
   nomeProprietarioInput.value = "";
