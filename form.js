@@ -19,7 +19,7 @@ const renderList = function () {
 
   contactsList.innerHTML = "";
 
-  contacts.forEach((pets) => {
+  pets.forEach((pets) => {
     const newLi = document.createElement("li");
 
     newLi.innerText = `${pets.nomeAnimele} ${pets.nomeProprietario} - ${pets.specie} ${pets.razza}`;
@@ -31,14 +31,14 @@ const renderList = function () {
 const formReference = document.querySelector("form");
 formReference.addEventListener("submit", function (e) {
   e.preventDefault();
-  const newContact = new Contact(
+  const newContact = new pets(
     nomeAnimaleInput.value,
     nomePropietarioInput.value,
     specieInput.value,
     razzaInput.value
   );
 
-  console.log("CONTATTO CREATO", newContact);
+  console.log("Animale Archiviato", newContact);
 
   contacts.push(newContact);
 
